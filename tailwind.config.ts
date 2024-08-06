@@ -14,7 +14,7 @@ const config: Config = {
       colors: {
         'custom-orange': 'rgb(241, 90, 34)',
         'custom-white': 'rgb(241, 242, 242)'
-      }
+      },
     },
   },
   plugins: [],
