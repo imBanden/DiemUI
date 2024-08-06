@@ -9,7 +9,7 @@ import ProgressBar from "./components/ProgressBar";
 import PageNavigator from "./components/PageNavigator";
 import Button from "./components/Button";
 import WidgetContainer from "./components/WidgetContainer";
-import LibraryHeader from "./components/LibraryHeader";
+import TypingHeader from "./components/TypingHeader";
 
 const page = () => {
   return (
@@ -19,7 +19,7 @@ const page = () => {
         <div className="text-2xl">Diem.</div>
         <div className="flex gap-4">
           <Button>Pricing</Button>
-          <Button color="orange">Log in</Button>
+          <Button color="orange">Library</Button>
         </div>
       </div>
 
@@ -27,9 +27,9 @@ const page = () => {
 
       <div className="flex flex-col justify-center items-center h-[75vh] bg-[url('../../public/img/cross-background.png')] bg-opacity-10">
         <div className="flex flex-col items-start gap-2">
-          <p className="font-code text-5xl text-custom-orange bg-custom-white">
+          <TypingHeader color={"orange"} delay={100}>
             Sieze the Interface.
-          </p>
+          </TypingHeader>
           <p className="font-code text-lg text-black bg-custom-white">
             where vintage meets vogue
           </p>
@@ -41,11 +41,13 @@ const page = () => {
 
       {/* Library */}
       <div className="flex flex-col items-center bg-custom-orange p-4 py-16">
-        <LibraryHeader delay={100}>Library.</LibraryHeader>
+        <div className="py-16">
+          <TypingHeader delay={100}>Library.</TypingHeader>
+        </div>
 
         <div className="flex overflow-x-auto gap-8 items-center p-4 w-full h-full no-scrollbar">
           <WidgetContainer title="Tags.">
-            <Tags>Tech 2.0</Tags>
+            <Tags>Carpe Diem</Tags>
           </WidgetContainer>
           <WidgetContainer title="Stop watch.">
             <TimerWidget />
