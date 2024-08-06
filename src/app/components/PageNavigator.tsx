@@ -21,7 +21,7 @@ const PageNavigator = ({ currentPage, totalPage }: PageNavigatorProps) => {
     <div
       className={`flex items-center p-2 ${
         current === 1 || current === totalPage ? "w-[238px]" : "w-[300px]"
-      } rounded-full bg-custom-white font-code transition-all`}
+      } rounded-full bg-custom-white font-code transition-all border-2 border-gray-300`}
     >
       <div
         className={`flex flex-1 justify-center items-center rounded-full h-[60px] w-[60px] bg-gray-300 cursor-pointer ${

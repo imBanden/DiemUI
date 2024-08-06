@@ -4,7 +4,7 @@ const ToggleButton = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <div
-      className={`rounded-full w-[100px] flex items-center p-2 cursor-pointer ${
+      className={`border-2 border-gray-300 rounded-full w-[100px] flex items-center p-2 cursor-pointer ${
         toggle ? "bg-custom-orange" : "bg-custom-white"
       } transition-all`}
       onClick={() => setToggle((prev) => !prev)}
