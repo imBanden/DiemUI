@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import MaterialSymbolsArrowBack from "../icons/MaterialSymbolsArrowBack";
 import MaterialSymbolsArrowForward from "../icons/MaterialSymbolsArrowForward";
 import moment from "moment";
-import { cursorTo } from "readline";
+
+interface DayProps {
+  day: number;
+  currMonth: boolean;
+}
+
+interface WeekProps {
+  days: DayProps[];
+}
+
+interface MonthProps {
+  weeks: WeekProps[];
+}
 
 const CalendarWidget = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [month, setMonth] = useState<any[]>([]);
+  const [month, setMonth] = useState<MonthProps>({ weeks: [] });
   const [currYear, setCurrYear] = useState<number>(
     Number(moment().format("YYYY"))
   );
@@ -61,26 +73,26 @@ const CalendarWidget = () => {
     setMonthString(moment(nowYear + "-" + nowMonth, "YYYY-MM").format("MMMM"));
 
     let currDayInMonth = 1;
-    let monthArray = [];
+    let monthArray: MonthProps = { weeks: [] };
     let firstDay = false;
     let extraDay = 1;
     while (currDayInMonth < daysInMonth) {
-      let weekArray = [];
+      let weekArray: WeekProps = { days: [] };
       let currDayInWeek = 0;
 
       // find the first day of the month
       if (!firstDay) {
         while (currDayInWeek < 7) {
           if (Number(firstDayOfMonth) != currDayInWeek) {
-            weekArray.push({ day: "na", currMonth: false });
+            weekArray.days.push({ day: 99, currMonth: false });
           } else {
-            weekArray.push({ day: currDayInMonth, currMonth: true });
+            weekArray.days.push({ day: currDayInMonth, currMonth: true });
             const daysInPrevMonth = moment(
               nowYear + "-" + prevMonth,
               "YYYY-MM"
             ).daysInMonth();
             for (let i = 0; i < currDayInWeek; i++) {
-              weekArray[i] = {
+              weekArray.days[i] = {
                 day: daysInPrevMonth - currDayInWeek + i + 1,
                 currMonth: false,
               };
@@ -97,27 +109,30 @@ const CalendarWidget = () => {
       // populate rest of the calendar and fill next month's day
       while (currDayInWeek < 7) {
         if (currDayInMonth > daysInMonth) {
-          weekArray.push({ day: extraDay, currMonth: false });
+          weekArray.days.push({ day: extraDay, currMonth: false });
           ++extraDay;
         } else {
-          weekArray.push({ day: currDayInMonth, currMonth: true });
+          weekArray.days.push({ day: currDayInMonth, currMonth: true });
         }
         ++currDayInMonth;
         ++currDayInWeek;
       }
 
       // push at the end of every week
-      monthArray.push(weekArray);
+      monthArray.weeks.push(weekArray);
     }
 
     //so that calendar shows at least 7 weeks (styling reasons)
-    while (monthArray.length != 6) {
-      let weekArray = [];
+    while (monthArray.weeks.length != 6) {
+      let weekArray: WeekProps = { days: [] };
       for (let i = 0; i < 7; i++) {
-        weekArray.push({ day: extraDay, currMonth: false });
+        weekArray.days.push({
+          day: extraDay,
+          currMonth: false,
+        });
         ++extraDay;
       }
-      monthArray.push(weekArray);
+      monthArray.weeks.push(weekArray);
     }
 
     // set Loading is false to avoid render issue
@@ -185,9 +200,9 @@ const CalendarWidget = () => {
               </tr>
             </thead>
             <tbody>
-              {month.map((week, index) => (
+              {month.weeks.map((week, index) => (
                 <tr key={index}>
-                  {week.map((day, index) => (
+                  {week.days.map((day, index) => (
                     <td
                       key={index}
                       className={`text-center rounded-full ${
