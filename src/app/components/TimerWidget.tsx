@@ -4,7 +4,7 @@ const TimerWidget = () => {
   const [angle, setAngle] = useState<number>(0);
   const [time, setTime] = useState<number>(0);
   return (
-    <div className="flex flex-col justify-center bg-custom-white p-4 rounded-lg gap-4 font-code">
+    <div className="flex flex-col justify-center bg-custom-white p-4 rounded-lg gap-4 font-code border-2 border-gray-300">
       <p>Timer</p>
       <div className="rounded-full w-[200px] h-[200px] bg-gray-300 flex justify-center items-center relative">
         <div className="rounded-full w-[200px] h-[200px] bg-custom-orange absolute z-10" />

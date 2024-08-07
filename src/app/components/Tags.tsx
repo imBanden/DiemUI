@@ -38,7 +38,7 @@ const Tags = ({ children, onToggle }: TagsProps) => {
         } transition-all`}
       />
       <p
-        className={`leading-none h-5 flex items-center font-code select-none ${
+        className={`leading-none h-5 flex items-center font-code select-none whitespace-nowrap ${
           !toggle ? "text-black" : "text-custom-white"
         } transition-all`}
       >

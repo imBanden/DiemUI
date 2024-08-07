@@ -11,6 +11,7 @@ import Button from "./components/Button";
 import WidgetContainer from "./components/WidgetContainer";
 import TypingHeader from "./components/TypingHeader";
 import SearchBar from "./components/SearchBar";
+import CalendarWidget from "./components/CalendarWidget";
 
 const page = () => {
   const navBar: String[] = ["Pricing", "Library", "Blog", "About"];
@@ -18,7 +19,7 @@ const page = () => {
     <div className="flex w-full h-full px-[300px] flex-col gap-4 py-4">
       {/* header */}
       <div className="flex justify-between items-center font-code gap-4">
-        <div className="text-2xl bg-custom-white border-2 border-gray-300 rounded-lg px-2 h-[50px] flex justify-center items-center">
+        <div className="text-2xl bg-custom-white border-2 border-gray-300 rounded-lg px-4 h-[50px] flex justify-center items-center">
           Diem.
         </div>
         <div className="flex flex-auto gap-4 text-md bg-custom-white border-2 border-gray-300 rounded-lg p-2 h-[50px] px-4">
@@ -60,8 +61,15 @@ const page = () => {
         </div>
 
         <div className="flex overflow-x-auto gap-8 items-center p-4 w-full h-full no-scrollbar">
+          <WidgetContainer title="Calander.">
+            <CalendarWidget />
+          </WidgetContainer>
           <WidgetContainer title="Tags.">
-            <Tags>Carpe Diem</Tags>
+            <div className="flex gap-2">
+              <Tags>Retro</Tags>
+              <Tags>Beautiful</Tags>
+              <Tags>Minimal</Tags>
+            </div>
           </WidgetContainer>
           <WidgetContainer title="Stop watch.">
             <TimerWidget />
@@ -82,9 +90,9 @@ const page = () => {
             <SearchBar />
           </WidgetContainer>
           <WidgetContainer title="Buttons.">
-            <Button>Carpe</Button>
+            <Button>Click</Button>
             <div className="w-12" />
-            <Button color="orange">Diem</Button>
+            <Button color="orange">Us</Button>
           </WidgetContainer>
         </div>
       </div>
