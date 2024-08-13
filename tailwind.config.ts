@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'code': ['var(--font-source-code-pro)']
+        code: ['var(--font-source-code-pro)'],
+        satoshi: ['Satoshi-Regular']
       },
       colors: {
         'custom-orange': 'rgb(241, 90, 34)',

@@ -168,23 +168,29 @@ const CalendarWidget = () => {
         <>
           <div className="flex flex-col items-center justify-center w-full">
             <div className="flex justify-between items-center w-full">
-              <button className="p-2" onClick={handleBackClick}>
+              <button
+                className="p-2 hover:text-custom-orange transition-all"
+                onClick={handleBackClick}
+              >
                 <MaterialSymbolsArrowBack />
               </button>
 
               <div
-                className="select-none cursor-pointer"
+                className="select-none cursor-pointer hover:text-custom-orange transition-all"
                 onClick={() => setMonthMenu((prev) => !prev)}
               >
                 {monthString}
               </div>
 
-              <button className="p-2" onClick={handleForwardClick}>
+              <button
+                className="p-2 hover:text-custom-orange transition-all"
+                onClick={handleForwardClick}
+              >
                 <MaterialSymbolsArrowForward />
               </button>
             </div>
             <div
-              className="text-sm select-none cursor-pointer"
+              className="text-sm select-none cursor-pointer hover:text-custom-orange transition-all"
               onClick={() => setYearMenu((prev) => !prev)}
             >
               {currYear}
@@ -212,8 +218,8 @@ const CalendarWidget = () => {
                       } ${
                         day.day === currDay && day.currMonth
                           ? "bg-custom-orange text-custom-white"
-                          : ""
-                      }`}
+                          : "hover:bg-gray-300"
+                      } transition-all`}
                       onClick={() => {
                         setCurrDay(day.day);
                       }}

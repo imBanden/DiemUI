@@ -1,17 +1,17 @@
 "use client";
 
-import MadeByImBanden from "./components/MadeByImBanden";
-import Tags from "./components/Tags";
-import TimerWidget from "./components/TimerWidget";
-import SpinningLoader from "./components/SpinningLoader";
-import ToggleButton from "./components/ToggleButton";
-import ProgressBar from "./components/ProgressBar";
-import PageNavigator from "./components/PageNavigator";
-import Button from "./components/Button";
-import WidgetContainer from "./components/WidgetContainer";
-import TypingHeader from "./components/TypingHeader";
-import SearchBar from "./components/SearchBar";
-import CalendarWidget from "./components/CalendarWidget";
+import MadeByImBanden from "../components/MadeByImBanden";
+import Tags from "../components/Tags";
+import TimerWidget from "../components/TimerWidget";
+import SpinningLoader from "../components/SpinningLoader";
+import ToggleButton from "../components/ToggleButton";
+import ProgressBar from "../components/ProgressBar";
+import PageNavigator from "../components/PageNavigator";
+import Button from "../components/Button";
+import WidgetContainer from "../components/WidgetContainer";
+import TypingHeader from "../components/TypingHeader";
+import SearchBar from "../components/SearchBar";
+import CalendarWidget from "../components/CalendarWidget";
 
 const page = () => {
   const navBar: String[] = ["Pricing", "Library", "Blog", "About"];

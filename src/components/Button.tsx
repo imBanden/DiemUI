@@ -4,10 +4,14 @@ type ColorOption = "gray" | "orange";
 
 interface ButtonProps {
   children: React.ReactNode;
-  color?: ColorOption & string;
+  color?: ColorOption;
 }
 
 const Button = ({ children, color = "gray" }: ButtonProps) => {
+  const colors = {
+    gray: "....",
+  };
+
   return (
     <>
       {color === "gray" && (
