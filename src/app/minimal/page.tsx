@@ -72,7 +72,7 @@ const page = () => {
                 accusamus dolorum? Voluptatum.
               </p>
               <button className="w-fit text-lg py-3 px-6 bg-none rounded-xl border-2 border-zinc-50 text-zinc-200 font-bold hover:bg-zinc-800 hover:text-zinc-100 transition-all cursor-pointer">
-                Let's connect
+                Let&apos;s connect
               </button>
             </div>
             <div className="flex flex-1  flex-col text-zinc-50 px-8 gap-6">
