@@ -12,9 +12,33 @@ import WidgetContainer from "../components/WidgetContainer";
 import TypingHeader from "../components/TypingHeader";
 import SearchBar from "../components/SearchBar";
 import CalendarWidget from "../components/CalendarWidget";
+import { useRouter } from "next/navigation";
+
+interface NavBarProps {
+  title: string;
+  url: string;
+}
 
 const page = () => {
-  const navBar: String[] = ["Pricing", "Library", "Blog", "About"];
+  const router = useRouter();
+  const navBar: NavBarProps[] = [
+    {
+      title: "Pricing",
+      url: "/",
+    },
+    {
+      title: "Library",
+      url: "/",
+    },
+    {
+      title: "About",
+      url: "/",
+    },
+    {
+      title: "Balance",
+      url: "/minimal",
+    },
+  ];
   return (
     <div className="flex w-full h-full px-[300px] flex-col gap-4 py-4">
       {/* header */}
@@ -27,8 +51,9 @@ const page = () => {
             <button
               key={index}
               className="hover:bg-custom-orange hover:text-custom-white rounded-md px-2 transition-all"
+              onClick={() => router.push(item.url)}
             >
-              {item}
+              {item.title}
             </button>
           ))}
         </div>

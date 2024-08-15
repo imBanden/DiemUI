@@ -2,9 +2,10 @@ import React, { Children, useState } from "react";
 
 interface TertiaryButtonProps {
   children: React.ReactNode;
+  handleClick?: () => void;
 }
 
-const TertiaryButton = ({ children }: TertiaryButtonProps) => {
+const TertiaryButton = ({ children, handleClick }: TertiaryButtonProps) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   return (
@@ -12,6 +13,7 @@ const TertiaryButton = ({ children }: TertiaryButtonProps) => {
       className="flex flex-col font-satoshi font-bold text-zinc-50 cursor-pointer w-fit"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      onClick={handleClick}
     >
       <p className="select-none">{children}</p>
       <div
