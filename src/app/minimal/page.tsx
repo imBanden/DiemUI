@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import MadeByImBanden from "@/components/MadeByImBanden";
 import Image from "next/image";
 
-const page = () => {
+const Minimalpage = () => {
   const router = useRouter();
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const [footerPosition, setFooterPosition] = useState<number>(0);
@@ -188,4 +188,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Minimalpage;

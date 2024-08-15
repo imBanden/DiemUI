@@ -19,7 +19,7 @@ interface NavBarProps {
   url: string;
 }
 
-const page = () => {
+const DiemPage = () => {
   const router = useRouter();
   const navBar: NavBarProps[] = [
     {
@@ -130,4 +130,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DiemPage;
