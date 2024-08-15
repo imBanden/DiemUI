@@ -10,6 +10,7 @@ import LogosYoutubeIcon from "@/icons/LogosYoutubeIcon";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import MadeByImBanden from "@/components/MadeByImBanden";
+import Image from "next/image";
 
 const page = () => {
   const router = useRouter();
@@ -64,9 +65,13 @@ const page = () => {
           <div className="flex">
             <div className="flex items-center gap-12">
               <div className="flex flex-1 justify-center items-center">
-                <img
-                  src="/img/minimalistic-zen-stone-background.jpg"
-                  className="object-cover w-[500px] h-[500px] rounded-xl"
+                <Image
+                  priority={true}
+                  src={"/img/minimalistic-zen-stone-background.jpg"}
+                  alt="Picture of 5 stone placing on top of each other"
+                  width={500}
+                  height={500}
+                  className="object-cover w-[500px] h-[500px] rounded-2xl object-[0%_70%]"
                 />
               </div>
               <div className="flex flex-col flex-1 h-full gap-16">

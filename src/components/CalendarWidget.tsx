@@ -138,7 +138,7 @@ const CalendarWidget = () => {
     // set Loading is false to avoid render issue
     setMonth(monthArray);
     setIsLoading(false);
-  }, [currMonth]);
+  }, [currMonth, currYear]);
 
   const handleBackClick = () => {
     if (currMonth === 1) {
